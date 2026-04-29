@@ -1,0 +1,24 @@
+diff --git a/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.js b/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.js
+index fa7021b..7dc1ad0 100644
+--- a/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.js
++++ b/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.js
+@@ -143,7 +143,6 @@ var Content2 = ({
+     onCloseAutoFocus={onCloseAutoFocus}
+     onEscapeKeyDown={onEscapeKeyDown}
+     forceMount={forceMount}
+-    asChild
+   >
+       <Component ref={composedRef} {...props} />
+     </AlertDialog.Content>;
+diff --git a/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.mjs b/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.mjs
+index da5a078..33dfa63 100644
+--- a/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.mjs
++++ b/node_modules/@rn-primitives/alert-dialog/dist/alert-dialog.web.mjs
+@@ -105,7 +105,6 @@ var Content2 = ({
+     onCloseAutoFocus={onCloseAutoFocus}
+     onEscapeKeyDown={onEscapeKeyDown}
+     forceMount={forceMount}
+-    asChild
+   >
+       <Component ref={composedRef} {...props} />
+     </AlertDialog.Content>;

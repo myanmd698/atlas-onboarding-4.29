@@ -1,0 +1,52 @@
+# Snyk (https://snyk.io) policy file — MPL-2.0 on lightningcss comes from Expo / Metro
+# (transitive dev/build tooling). Not practical to remove without changing the Expo stack.
+version: v1.25.0
+ignore:
+  'snyk:lic:npm:lightningcss:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-android-arm64:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-darwin-arm64:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-darwin-x64:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-freebsd-x64:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-linux-arm-gnueabihf:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-linux-arm64-gnu:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-linux-arm64-musl:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-linux-x64-gnu:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-linux-x64-musl:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-win32-arm64-msvc:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'
+  'snyk:lic:npm:lightningcss-win32-x64-msvc:MPL-2.0':
+    - '*':
+        reason: Transitive MPL-2.0 via Expo Metro lightningcss (build tooling).
+        expires: '2027-12-31'

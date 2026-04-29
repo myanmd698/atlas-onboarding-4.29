@@ -1,0 +1,33 @@
+diff --git a/node_modules/@storybook/addon-ondevice-controls/dist/types/Number.js b/node_modules/@storybook/addon-ondevice-controls/dist/types/Number.js
+index 8e8061f..68f8ed5 100644
+--- a/node_modules/@storybook/addon-ondevice-controls/dist/types/Number.js
++++ b/node_modules/@storybook/addon-ondevice-controls/dist/types/Number.js
+@@ -37,8 +37,9 @@ const getRangeOptions = (arg) => {
+ };
+ const NumberType = ({ arg, isPristine, onChange = (value) => value }) => {
+     const showError = Number.isNaN(arg.value);
+-    const [numStr, setNumStr] = useState(arg.value?.toString());
+-    const updateNumstr = useCallback((value) => setNumStr(value?.toString()), []);
++    // Always use a string so the TextInput stays controlled (undefined → defined trips React 19 / RN-web).
++    const [numStr, setNumStr] = useState(() => (arg.value?.toString() ?? ''));
++    const updateNumstr = useCallback((value) => setNumStr(value?.toString() ?? ''), []);
+     const { key, setCurrentValue } = useResyncValue(arg.value, isPristine, updateNumstr);
+     const [focused, setFocused] = useState(false);
+     const handleNormalChangeText = (text) => {
+@@ -55,13 +56,14 @@ const NumberType = ({ arg, isPristine, onChange = (value) => value }) => {
+     };
+     if (arg.range || arg.type === 'range') {
+         const { min, max, step } = getRangeOptions(arg);
+-        return (_jsxs(View, { children: [_jsxs(ValueContainer, { children: [_jsx(LabelText, { children: "Value: " }), _jsx(ValueText, { children: arg.value })] }), _jsx(SliderWrapper, { minimumValue: min, maximumValue: max, step: step, value: arg.value, onSlidingComplete: (val) => {
++        const sliderValue = typeof arg.value === 'number' && !Number.isNaN(arg.value) ? arg.value : min;
++        return (_jsxs(View, { children: [_jsxs(ValueContainer, { children: [_jsx(LabelText, { children: "Value: " }), _jsx(ValueText, { children: arg.value })] }), _jsx(SliderWrapper, { minimumValue: min, maximumValue: max, step: step, value: sliderValue, onSlidingComplete: (val) => {
+                         onChange(val);
+                         setCurrentValue(val);
+                     } })] }, key));
+     }
+     else {
+-        return (_jsx(Input, { autoCapitalize: "none", underlineColorAndroid: "transparent", value: numStr, keyboardType: "numeric", onChangeText: handleNormalChangeText, hasError: showError, focused: focused, onFocus: () => setFocused(true), onBlur: () => setFocused(false) }));
++        return (_jsx(Input, { autoCapitalize: "none", underlineColorAndroid: "transparent", value: numStr ?? '', keyboardType: "numeric", onChangeText: handleNormalChangeText, hasError: showError, focused: focused, onFocus: () => setFocused(true), onBlur: () => setFocused(false) }));
+     }
+ };
+ export default NumberType;
